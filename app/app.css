@@ -1,0 +1,22 @@
+body {
+    background-color: #dddddd;
+    font-size: 16px;
+}
+
+.title {
+    font-family: 'PT Serif', "Avant Garde", Avantgarde, serif;
+    font-size: 5em;
+    text-align: center;
+
+    color: #2c2c2c;
+    letter-spacing: .05em;
+    text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    margin-top: 2em;
+}
+
+.icons {
+    text-align: center;
+}
