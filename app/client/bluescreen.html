@@ -1,0 +1,9 @@
+<template name="bluescreen">
+  <div style="background-color: rgb(0, 0, 249); min-height: 100vh; width: 100%; padding: 20px;">
+    {{#each line}}
+      <div style="min-height: 40px; line-height: 40px; color: white; font-size: 20px; font-family: 'Lucida Console', Monospace, sans-serif;">
+        {{{this}}}
+      </div>
+    {{/each}}
+  </div>
+</template>

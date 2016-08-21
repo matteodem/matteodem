@@ -2,6 +2,6 @@ mkdir -p dist
 cd app
 meteor-build-client ../dist/
 cd ../dist
-surge ./ --domain=matteodem.surge.sh
+surge ./ --domain=matteodem.ch
 cd ..
 
