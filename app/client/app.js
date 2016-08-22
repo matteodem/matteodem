@@ -40,7 +40,7 @@ const bluescreenContent = [
   '',
   '',
   'he was last seen drinking coffee nearby your hometown.', // TODO: randomize this text
-  'send complaints to: (http://bit.ly/mdm-twitter |> twitter), (http://bit.ly/mdm-github |> github) or (http://bit.ly/mdm-linkedin |> linkedin).',
+  'send complaints to: my (http://bit.ly/mdm-twitter |> twitter), (http://bit.ly/mdm-github |> github) or (http://bit.ly/mdm-linkedin |> linkedin).',
   '',
   ''
 ];
@@ -56,7 +56,10 @@ Template.bluescreen.onCreated(() => {
 
     if (currentPos.y === bluescreenContent.length) {
       Meteor.clearInterval(handle);
-      localStorage.setItem(TYPING_SPEED_KEY, typingSpeed - 5);
+
+      if (typingSpeed > 30) {
+        localStorage.setItem(TYPING_SPEED_KEY, typingSpeed - 5);
+      }
     }
 
     const newLines = bluescreenContent.map((line, index) => {
