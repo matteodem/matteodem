@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict';
+import { _ } from 'meteor/underscore';
 
 const dict = new ReactiveDict('app');
 
@@ -33,16 +34,22 @@ const linkify = str => {
   return str;
 };
 
+const doings = [
+  'drinking coffee',
+  'buying a random energy drink from the grocery store',
+  'vividly recalling what he ate for lunch',
+];
+
 const bluescreenContent = [
   '',
   'matteodem hacked your browser.',
   '',
   '',
   '',
-  'he was last seen drinking coffee nearby your hometown.', // TODO: randomize this text
-  'send complaints to: my (http://bit.ly/mdm-twitter |> twitter), (http://bit.ly/mdm-github |> github) or (http://bit.ly/mdm-linkedin |> linkedin).',
+  `he was last seen ${doings[_.random(0, doings.length - 1)]} nearby your hometown.`, // TODO: randomize this text
+  'send complaints to his (http://bit.ly/mdm-twitter |> twitter), (http://bit.ly/mdm-github |> github) or (http://bit.ly/mdm-linkedin |> linkedin) profile.',
   '',
-  ''
+  '',
 ];
 
 dict.set('lines', (new Array(bluescreenContent.length)));
