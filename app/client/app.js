@@ -14,7 +14,7 @@ const linkify = str => {
     return str
   }
 
-  const links = str.match(/\([\/:\s\w\-\.]+\|>[\s\w\-]+\)/g)
+  const links = str.match(/\([\/:\s\w\-\.\?]+\|>[\s\w\-]+\)/g)
 
   if (links) {
     links.forEach(linkDesc => {
@@ -47,7 +47,7 @@ const bluescreenContent = [
   '',
   '',
   `he was last seen ${doings[_.random(0, doings.length - 1)]} nearby your hometown.`, // TODO: randomize this text
-  '(/restarted |> Restart your computer)',
+  '(/?restarted |> Restart your computer)',
   '',
   '',
 ]
@@ -111,7 +111,7 @@ Template.bluescreen.helpers({
 
 Template.craze.helpers({
   restarted() {
-    return window.location.pathname === '/restarted'
+    return window.location.search === '?restarted'
   },
 })
 
