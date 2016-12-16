@@ -3,5 +3,24 @@
 </head>
 
 <body style="padding: 0; margin: 0;">
-  {{> bluescreen}}
+  {{> craze}}
 </body>
+
+<template name="craze">
+  {{#if restarted}}
+    {{> desktop}}
+  {{else}}
+    {{> bluescreen}}
+  {{/if}}
+</template>
+
+<template name="desktop">
+  <div class="bg">
+    {{#each desktopApp}}
+      <div class="app {{isActiveClass}}">
+        <div class="icon" style="background-image: url({{icon}})"></div>
+        <div class="label">{{label}}</div>
+      </div>
+    {{/each}}
+  </div>
+</template>

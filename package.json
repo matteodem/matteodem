@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cd app && meteor",
+    "deploy": "sh ./deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
