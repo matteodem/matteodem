@@ -3,24 +3,23 @@
 </head>
 
 <body style="padding: 0; margin: 0;">
-  {{> craze}}
+  <div style="padding: 30px;">
+    {{> craze}}
+  </div>
 </body>
 
 <template name="craze">
-  {{#if restarted}}
+  <div style="font-weight: bold; font-size: 20px">
+    {{age}} years old, web developer, coffee lover, pc music maker
+  </div>
+
+  <div style="padding-top: 20px">
     {{> desktop}}
-  {{else}}
-    {{> bluescreen}}
-  {{/if}}
+  </div>
 </template>
 
 <template name="desktop">
-  <div class="bg">
-    {{#each desktopApp}}
-      <div class="app {{isActiveClass}}">
-        <div class="icon" style="background-image: url({{icon}})"></div>
-        <div class="label">{{label}}</div>
-      </div>
-    {{/each}}
-  </div>
+  {{#each desktopApp}}
+    <a class="label" href="{{link}}">{{label}}</a>
+  {{/each}}
 </template>

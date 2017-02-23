@@ -113,6 +113,9 @@ Template.craze.helpers({
   restarted() {
     return window.location.search === '?restarted'
   },
+  age() {
+    return 21
+  }
 })
 
 Template.desktop.helpers({
@@ -124,54 +127,23 @@ Template.desktop.helpers({
       {
         id: 'github',
         label: 'Github',
-        icon: 'http://i.imgur.com/zlDnNBv.png',
         link: 'http://bit.ly/mdm-github',
       },
       {
         id: 'twitter',
         label: 'Twitter',
-        icon: 'http://i.imgur.com/bdZzrMC.png',
         link: 'http://bit.ly/mdm-twitter',
+      },
+      {
+        id: 'insan3lik3',
+        label: 'Insan3Lik3',
+        link: 'http://insan3lik3.com',
       },
       {
         id: 'email',
         label: 'Email',
-        icon: 'http://imgur.com/mvuO3fD.jpg',
         link: 'mailto:matteo@matteodem.ch',
       },
-      {
-        id: 'secret-passwords',
-        label: 'Top Secret!!',
-        icon: 'http://i.imgur.com/4KnasCJ.jpg',
-        onclick() {
-          const width = $(window).width() - 200
-          const height = $(window).height() - 400
-
-          let topOffset = 50
-          let leftOffset = 50
-          let round = 0
-
-          const handle = setInterval(function () {
-            topOffset = (Math.random() * width)
-            leftOffset = (Math.random() * height)
-            round += 1
-
-            $('body').append(`
-            <div
-                class="error-popup"
-                style="font-size: 40px; border: 3px solid #222; padding: 40px 50px; width: 400px; background-color: rgb(230, 50, 50); position: fixed; top: ${topOffset}px; left: ${leftOffset}px">
-              Error while opening secret file!
-            </div>
-            `)
-
-            if (round > 80)  {
-              clearInterval(handle)
-              $('.error-popup').remove()
-              window.location.href = '/'
-            }
-          }, 70)
-        }
-      }
     ]
   },
 })
