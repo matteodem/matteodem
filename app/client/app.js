@@ -140,6 +140,11 @@ Template.desktop.helpers({
         link: 'http://insan3lik3.com',
       },
       {
+        id: 'patreon',
+        label: 'Patreon',
+        link: 'https://www.patreon.com/matteodem',
+      },
+      {
         id: 'email',
         label: 'Email',
         link: 'mailto:matteo@matteodem.ch',
