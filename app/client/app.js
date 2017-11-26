@@ -18,11 +18,6 @@ Template.craze.helpers({
         link: 'http://bit.ly/mdm-github',
       },
       {
-        id: 'twitter',
-        label: 'Twitter',
-        link: 'http://bit.ly/mdm-twitter',
-      },
-      {
         id: 'patreon',
         label: 'Patreon',
         link: 'https://www.patreon.com/matteodem',
