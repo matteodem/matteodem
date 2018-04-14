@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict'
 
-Template.craze.helpers({
+Template.content.helpers({
   isActiveClass() {
     return Session.equals('selectedApp', this.id) ? 'active' : ''
   },
@@ -16,6 +16,16 @@ Template.craze.helpers({
         id: 'github',
         label: 'Github',
         link: 'http://bit.ly/mdm-github',
+      },
+      {
+        id: 'linkedin',
+        label: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/matteo-de-micheli-8857429a/',
+      },
+      {
+        id: 'mastodon',
+        label: 'Mastodon',
+        link: 'https://mastodon.social/@matteodem',
       },
       {
         id: 'patreon',

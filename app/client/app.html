@@ -18,18 +18,37 @@
 
 <body style="padding: 0; margin: 0;">
   <div style="padding: 30px; max-width: 900px">
-    {{> craze}}
+    {{> content}}
   </div>
 </body>
 
-<template name="craze">
-  <div style="font-weight: bold; font-size: 3.3em; line-height: 0.9em">
-    web developer, coffee drinker, pc music maker, art lover
+<template name="block">
+  <div style="padding: 50px 0">
+    {{> Template.contentBlock}}
   </div>
+</template>
 
-  <div style="padding-top: 2em; font-size: 1.3em">
-    {{#each personalLink}}
-      <a href="{{link}}" style="padding-right: 0.2em">{{label}}</a>
-    {{/each}}
+<template name="gray">
+  <span style="color: #707070">{{> Template.contentBlock}}</span>
+</template>
+
+<template name="content">
+  <div style="font-weight: bold; color: #000; font-size: 3.3em; line-height: 0.9em">
+    {{# block}}
+      {{#gray}}Hi I'm{{/gray}} Matteo 👋
+    {{/block}}
+
+    {{# block}}
+      {{#gray}}I love{{/gray}} Free Software {{#gray}}and{{/gray}} art{{#gray}}.{{/gray}}
+      <br />{{#gray}}I invest a lot of time into it.{{/gray}}
+      <br />
+      {{#gray}}I also like{{/gray}} helping people{{#gray}}.{{/gray}}
+    {{/block}}
+
+    <div style="padding-top: 2em; line-height: 1em">
+      {{#each personalLink}}
+        <a href="{{link}}" style="padding-right: 0.2em">{{label}}</a>
+      {{/each}}
+    </div>
   </div>
 </template>
