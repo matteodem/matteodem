@@ -10,7 +10,7 @@ Template.content.helpers({
       {
         id: 'blog',
         label: 'Blog',
-        link: 'http://blog.matteodem.ch',
+        link: 'https://matteodem.github.io/blog/',
       },
       {
         id: 'github',
