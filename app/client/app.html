@@ -1,26 +1,29 @@
 <head>
   <title>matteodem</title>
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
     body {
       font-family: Roboto, Arial, sans-serif;
       font-size: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0;
     }
 
-    @media(max-width: 600px) {
-      body { font-size: 15px; }
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
     }
 
-    @media(max-width: 500px) {
-      body { font-size: 13px; }
+    @media (max-width: 500px) {
+      body {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
-
-<body style="padding: 0; margin: 0;">
-  <div style="padding: 30px; max-width: 900px">
-    {{> content}}
-  </div>
-</body>
 
 <template name="block">
   <div style="padding: 50px 0">
@@ -32,16 +35,32 @@
   <span style="color: #707070">{{> Template.contentBlock}}</span>
 </template>
 
+<template name="bigger">
+  <span style="font-weight: 900">{{> Template.contentBlock}}</span>
+</template>
+
 <template name="content">
-  <div style="font-weight: bold; color: #000; font-size: 3.3em; line-height: 0.9em">
+  <div style="font-weight: bold; color: #000; font-size: 3em; line-height: 0.9em">
     {{# block}}
       {{#gray}}Hi I'm{{/gray}} Matteo 👋
     {{/block}}
 
+    {{> Template.contentBlock}}
+  </div>
+</template>
+
+<template name="lost">
+  {{# block}}
+    You're lost!
+  {{/ block}}
+</template>
+
+<template name="home">
+  {{# content}}
     {{# block}}
-      {{#gray}}I love{{/gray}} Free Software {{#gray}}and{{/gray}} art{{#gray}}.{{/gray}}
-      <br />{{#gray}}I invest a lot of time into it.{{/gray}}
-      <br />
+      {{#gray}}I love{{/gray}} Free Software {{#gray}}and{{/gray}} <a href="/music">music</a>{{#gray}}.{{/gray}}
+      <br/>{{#gray}}I invest a lot of time into it.{{/gray}}
+      <br/>
       {{#gray}}I also like{{/gray}} helping people{{#gray}}.{{/gray}}
     {{/block}}
 
@@ -50,5 +69,32 @@
         <a href="{{link}}" style="padding-right: 0.2em">{{label}}</a>
       {{/each}}
     </div>
-  </div>
+  {{/ content}}
+</template>
+
+<template name="music">
+  {{# content}}
+    {{# block}}
+      {{#gray}}I make{{/gray}} music{{#gray}}.{{/gray}}
+      <br/>
+      {{#gray}}I have {{/gray}}<a href="https://www.insan3lik3.com">experience</a>
+      <br/>
+      {{#gray}}on topics such as:{{/gray}}
+      <br/>
+      <br/>
+      {{# bigger}}music production{{/ bigger}}{{#gray}},{{/gray}}
+      <br/>{{# bigger}}promotion{{/ bigger}}{{#gray}},{{/gray}}
+      <br/>{{#gray}}and the{{/gray}} {{# bigger}}industry{{/ bigger}}.
+      <br/>
+      <br/>
+
+      {{#gray}}If you want{{/gray}} help {{#gray}}on any of these topics{{/gray}} <a href="https://goo.gl/forms/HGqbzu6vZiydNLgk1">reach out</a> to me.
+    {{/block}}
+
+    <div style="padding-top: 2em; line-height: 1em">
+      {{#each personalLink}}
+        <a href="{{link}}" style="padding-right: 0.2em">{{label}}</a>
+      {{/each}}
+    </div>
+  {{/ content}}
 </template>

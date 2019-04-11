@@ -1,10 +1,6 @@
 import { Template } from 'meteor/templating'
-import { ReactiveDict } from 'meteor/reactive-dict'
 
-Template.content.helpers({
-  isActiveClass() {
-    return Session.equals('selectedApp', this.id) ? 'active' : ''
-  },
+Template.home.helpers({
   personalLink() {
     return [
       {
@@ -39,4 +35,12 @@ Template.content.helpers({
       },
     ]
   },
+})
+
+Router.route('/', function () {
+  this.render('home')
+})
+
+Router.route('/music', function () {
+  this.render('music')
 })

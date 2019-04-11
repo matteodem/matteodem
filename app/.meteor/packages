@@ -18,3 +18,5 @@ reactive-dict
 
 standard-minifier-css
 standard-minifier-js
+
+iron:router
